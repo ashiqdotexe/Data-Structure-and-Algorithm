@@ -1,5 +1,5 @@
+//Linked List with Retrieve Item function
 #include<iostream>
-
 using namespace std;
 
 class Node {
@@ -148,10 +148,35 @@ class SinglyLinkedList {
         temp = temp -> next;
       }
     }
-
   }
-
+  void retrieveNode(int k)
+  {
+    Node* ptr=nodeExists(k);
+    if(ptr==NULL)
+    {
+      cout<<"There is no such node with the same key value "<<k<<". Please enter a new key value"<<endl;
+    }
+    else
+    {
+      if(head==NULL)
+      {
+        cout<<"The list is empty";
+      }
+      else
+      {
+        if(head->key==k)
+        {
+          cout<<"("<<head->key<<","<<head->data<<")";
+        }
+        else
+        {
+          cout<<"("<<ptr->key<<","<<ptr->data<<")";
+        }
+      }
+    }
+  }
 };
+
 
 int main() {
 
@@ -166,7 +191,8 @@ int main() {
     cout << "4. deleteNodeByKey()" << endl;
     cout << "5. updateNodeByKey()" << endl;
     cout << "6. print()" << endl;
-    cout << "7. Clear Screen" << endl << endl;
+    cout<<"7.Retrieve a particular item"<<endl;
+    cout << "8. Clear Screen" << endl << endl;
 
     cin >> option;
     Node * n1 = new Node();
@@ -224,6 +250,11 @@ int main() {
 
       break;
     case 7:
+      cout<<"Enter the of the item that you want to retrieve: "<<endl;
+      cin>>k1;
+      s.retrieveNode(k1);
+      break; 
+    case 8:
       system("cls");
       break;
     default:
