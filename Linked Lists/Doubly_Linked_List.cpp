@@ -1,4 +1,4 @@
-//I am still working on sorting function. Please stay tune. Thank you.
+//I am still working on sorting function.
 
 #include<bits/stdc++.h>
 using namespace std;
